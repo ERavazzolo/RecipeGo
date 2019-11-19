@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Nunito|Raleway:700" rel="stylesheet">
+
+    <title>RecipeGo</title>
+</head>
+
+<body class="container">
+    <div class="wrapper">
+        <section class="top">
+            <div class="header site__header">
+                <svg class="site__logo">
+                    <use xlink:href="img/sprite.svg#icon-leaf"></use>
+                </svg>
+                <h1 class="heading-1 site__name">RecipeGo</h1>
+            </div>
+
+            <div class="search">
+                <input type="text" class="search__recipe" placeholder="Search recipe" required>
+                <button class="search__btn btn">
+                    <ion-icon name="search"></ion-icon>
+                    <span class="btn__name">Search</span>
+                </button>
+                <div class="search__result">
+                    <!--<p class="search__name"><span class="search__name-only">Peach Pie, </span><span class="search__page">page 34</span></p>-->
+                    <!--<p class="search__name"><span class="search__name-only">Muffins, </span><span class="search__page">page 88</span></p>-->
+                </div>
+            </div>
+        </section>
+        <section class="bottom">
+            <h3 class="heading-3">Save a new recipe</h3>
+            <div class="add">
+                <input type="text" class="add__recipe" placeholder="Recipe name" required>
+                <input type="text" class="add__page" placeholder="Page number" required>
+                <button class="add__btn btn">
+                    <ion-icon name="checkmark"></ion-icon>
+                    <span class="btn__name">Save</span>
+                </button>
+                <span class="add__confirm">Saved</span>
+            </div>
+        
+        </section>
+    </div>
+
+    <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

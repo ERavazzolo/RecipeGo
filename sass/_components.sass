@@ -1,0 +1,143 @@
+// INPUT ELEMENTS
+input
+    @extend %defaultText
+    border: none
+    border-radius: 3px
+    padding-left: .5rem
+
+input::placeholder
+    color: $grey
+
+// SEARCH INPUT COMPONENT
+.search
+    &__recipe // input
+        border-bottom: 2px solid $blue-light
+        box-shadow: $shadowWhite
+
+    &__name // display recipe + page
+        font-size: 3rem
+
+        &-only 
+            text-transform: capitalize
+
+// ADD INPUT COMPONENT
+.add
+    &__recipe,
+    &__page
+        border-bottom: 2px solid $green-light
+        box-shadow: $shadowBlack
+
+    &__confirm
+        font-size: 3rem
+        color: $green
+
+// BUTTON COMPONENTS
+.btn,
+.btn:link,
+.btn:visited    // common styles
+    @extend %defaultText
+    
+    display: flex
+    align-items: center
+    text-align: center
+    
+    border-radius: 100px
+    padding: 1rem 2rem
+    background-color: $white
+    outline: none
+    transform: translateY(0px)
+
+    transition: all .05s ease-in-out
+
+    &:hover,
+    &:focus
+        transform: translateY(-2px)
+        color: $white
+        border: 2px solid transparent
+        cursor: pointer
+
+    &:active
+        transform: translateY(2px)
+
+.search     // search btn specific styles
+    &__btn
+        border: 2px solid $blue-light
+        box-shadow: $shadowWhite
+
+        &:hover,
+        &:focus
+            background-color: rgba($blue-light-2, .9)
+            box-shadow: 0 1rem 3rem rgba($white, .15)
+
+        &:active
+            background-color: $blue-light-2
+            box-shadow: 0 1rem .5rem rgba($white, .15)
+
+        @media only screen and (max-width: 800px)
+            justify-self: center
+
+.add    // add btn specific styles
+    &__btn
+        border: 2px solid $green-light
+        box-shadow: $shadowBlack
+
+        &:hover,
+        &:focus
+            background-color: rgba($green-light-2, .8)
+            box-shadow: 0 1rem 3rem rgba($black, .15)
+
+        &:active
+            background-color: $green-light-2
+            box-shadow: 0 1rem .5rem rgba($black, .15)
+
+ion-icon 
+    margin-right: 1rem
+    line-height: 1
+    font-size: 2.4rem
+
+///////// ANIMATIONS FOR JS
+@keyframes searchBtn
+    0%, 100%
+        background-color: #ffffff
+        border: 2px solid $blue-light
+        box-shadow: $shadowWhite
+        transform: translateY(0px)
+        color: white
+
+
+    20%
+        background-color: rgba(#8788aa, .9)
+        color: #ffffff
+        border: 2px solid transparent
+        box-shadow: 0 1rem 3rem rgba(#ffffff, .15)
+        transform: translateY(2px)
+    
+    50%
+        background-color: #8788aa
+        box-shadow: 0 1rem .5rem rgba(#ffffff, .15)
+
+
+@keyframes addBtn
+    0%, 100%
+        background-color: #ffffff
+        border: 2px solid #486846
+        box-shadow: $shadowBlack
+        transform: translateY(0px)
+
+
+    20%
+        background-color: rgba(#5d8465, .9)
+        color: #ffffff
+        border: 2px solid transparent
+        box-shadow: 0 1rem 3rem rgba(#000000, .15)
+        transform: translateY(2px)
+    
+    50%
+        background-color: #5d8465
+        box-shadow: 0 1rem .5rem rgba(#000000, .15)
+
+.searchIsPressed
+    animation: searchBtn .25s 1 normal ease-in
+
+.saveIsPressed
+    animation: addBtn .25s 1 normal ease-in

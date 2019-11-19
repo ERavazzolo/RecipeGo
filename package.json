@@ -1,0 +1,23 @@
+{
+  "name": "recipego",
+  "version": "1.0.0",
+  "description": "Recipe search app",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.sass css/style.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "node-sass sass/main.sass css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" css/style.comp.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "author": "Erika Ravazzolo",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.7.2",
+    "node-sass": "^4.13.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.3"
+  }
+}
